@@ -120,10 +120,17 @@ overflow: hidden;
 box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
+/* 🔥 MEJORA DE IMÁGENES */
+
 .flip-front img {
 width: 100%;
 height: 100%;
 object-fit: cover;
+transition: transform 0.6s ease;
+}
+
+.flip-card:hover img {
+transform: scale(1.08);
 }
 
 .flip-back {
@@ -186,6 +193,7 @@ transition: 1s;
 opacity: 1;
 transform: translateY(0);
 }
+
 /* ===== MENU HAMBURGUESA MOVIL ===== */
 
 .menu-toggle {
