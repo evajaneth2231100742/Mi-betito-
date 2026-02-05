@@ -1,19 +1,25 @@
-// contador días
-const startDate = new Date("2025-09-23");
-const today = new Date();
-const diff = today - startDate;
-const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+const start = new Date("2025-09-23");
+const now = new Date();
 
-document.getElementById("days").textContent = days;
+let months = (now.getFullYear() - start.getFullYear()) * 12;
+months += now.getMonth() - start.getMonth();
 
-// animaciones suaves al hacer scroll
+let days = now.getDate() - start.getDate();
+if (days < 0) {
+months--;
+const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+days += prevMonth.getDate();
+}
+
+document.getElementById("time").innerHTML =
+months + " meses y " + days + " días";
+
+// animaciones scroll
 const faders = document.querySelectorAll(".fade");
 
 const appear = new IntersectionObserver(entries => {
 entries.forEach(entry => {
-if (entry.isIntersecting) {
-entry.target.classList.add("show");
-}
+if (entry.isIntersecting) entry.target.classList.add("show");
 });
 });
 
