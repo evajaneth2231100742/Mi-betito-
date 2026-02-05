@@ -37,3 +37,10 @@ if (entry.isIntersecting) entry.target.classList.add("show");
 });
 
 faders.forEach(el => appear.observe(el));
+// MENU HAMBURGUESA
+const toggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("nav-menu");
+
+toggle.addEventListener("click", () => {
+menu.classList.toggle("active");
+});
