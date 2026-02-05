@@ -1,8 +1,8 @@
 body {
 margin: 0;
-font-family: Arial, sans-serif;
-background: #fff0f5;
-color: #444;
+font-family: 'Poppins', sans-serif;
+background: #fafafa;
+color: #333;
 scroll-behavior: smooth;
 }
 
@@ -13,9 +13,11 @@ padding: 20px;
 }
 
 .header {
-background: #ffd6e7;
+background: white;
+border-bottom: 1px solid #eee;
 position: sticky;
 top: 0;
+z-index: 10;
 }
 
 .nav {
@@ -25,74 +27,89 @@ align-items: center;
 }
 
 .logo {
-font-size: 24px;
+font-weight: 600;
+font-size: 18px;
 text-decoration: none;
+color: #222;
 }
 
 .nav-menu {
 list-style: none;
 display: flex;
-gap: 20px;
+gap: 25px;
 }
 
 .nav-menu a {
 text-decoration: none;
-color: #444;
+color: #555;
+font-size: 14px;
+}
+
+.nav-menu a:hover {
+color: #000;
 }
 
 .btn {
-background: #ff9ac1;
+background: #e9c3d3;
 padding: 8px 14px;
 border-radius: 20px;
-color: white;
+color: #000;
 }
 
 .hero {
 text-align: center;
-padding: 80px 20px;
-background: #ffe4f1;
+padding: 100px 20px;
+background: #f6e7ed;
+}
+
+.hero h1 {
+font-size: 36px;
+margin-bottom: 10px;
 }
 
 .section {
-padding: 60px 20px;
+padding: 80px 20px;
 text-align: center;
 }
 
 .alt {
-background: #ffeaf5;
+background: #f9f3f6;
 }
 
-.grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-gap: 20px;
+.section h2 {
+font-weight: 600;
+margin-bottom: 20px;
 }
 
-.card {
-background: white;
-padding: 20px;
-border-radius: 12px;
-box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+.section p {
+max-width: 700px;
+margin: auto;
+line-height: 1.7;
 }
 
-.gallery {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-gap: 15px;
+.contador {
+background: #222;
+color: white;
 }
 
-.gallery img {
-width: 100%;
-border-radius: 12px;
+.counter-box {
+font-size: 40px;
+font-weight: 600;
+}
+
+.counter-box p {
+font-size: 14px;
+opacity: 0.8;
 }
 
 .footer {
 text-align: center;
-padding: 20px;
-background: #ffd6e7;
+padding: 30px;
+background: white;
+border-top: 1px solid #eee;
 }
 
-/* Animación suave */
+/* animación */
 
 .fade {
 opacity: 0;
