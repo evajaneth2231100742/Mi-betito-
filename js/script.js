@@ -6,7 +6,7 @@ const days = Math.floor(diff / (1000 * 60 * 60 * 24));
 
 document.getElementById("days").textContent = days;
 
-// animaciones suaves
+// animaciones suaves al hacer scroll
 const faders = document.querySelectorAll(".fade");
 
 const appear = new IntersectionObserver(entries => {
