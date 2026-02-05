@@ -40,7 +40,16 @@ faders.forEach(el => appear.observe(el));
 // MENU HAMBURGUESA
 const toggle = document.getElementById("menu-toggle");
 const menu = document.getElementById("nav-menu");
+const links = document.querySelectorAll(".nav-menu a");
 
+// abrir / cerrar con el botón
 toggle.addEventListener("click", () => {
-menu.classList.toggle("active");
+  menu.classList.toggle("active");
+});
+
+// cerrar al tocar un link
+links.forEach(link => {
+  link.addEventListener("click", () => {
+    menu.classList.remove("active");
+  });
 });
