@@ -1,0 +1,106 @@
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+background: #fff0f5;
+color: #444;
+scroll-behavior: smooth;
+}
+
+.container {
+max-width: 1000px;
+margin: auto;
+padding: 20px;
+}
+
+.header {
+background: #ffd6e7;
+position: sticky;
+top: 0;
+}
+
+.nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.logo {
+font-size: 24px;
+text-decoration: none;
+}
+
+.nav-menu {
+list-style: none;
+display: flex;
+gap: 20px;
+}
+
+.nav-menu a {
+text-decoration: none;
+color: #444;
+}
+
+.btn {
+background: #ff9ac1;
+padding: 8px 14px;
+border-radius: 20px;
+color: white;
+}
+
+.hero {
+text-align: center;
+padding: 80px 20px;
+background: #ffe4f1;
+}
+
+.section {
+padding: 60px 20px;
+text-align: center;
+}
+
+.alt {
+background: #ffeaf5;
+}
+
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px;
+}
+
+.card {
+background: white;
+padding: 20px;
+border-radius: 12px;
+box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.gallery {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 15px;
+}
+
+.gallery img {
+width: 100%;
+border-radius: 12px;
+}
+
+.footer {
+text-align: center;
+padding: 20px;
+background: #ffd6e7;
+}
+
+/* Animación suave */
+
+.fade {
+opacity: 0;
+transform: translateY(30px);
+transition: 1s;
+}
+
+.fade.show {
+opacity: 1;
+transform: translateY(0);
+}
