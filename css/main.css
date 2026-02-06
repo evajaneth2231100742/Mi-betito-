@@ -1,4 +1,3 @@
-
 body {
 margin: 0;
 font-family: 'Poppins', sans-serif;
@@ -67,6 +66,23 @@ background: linear-gradient(135deg,#ffb6d2,#e896b3);
 padding: 8px 14px;
 border-radius: 20px;
 color: white;
+position: relative;
+overflow: hidden;
+}
+
+.btn::after {
+content: "";
+position: absolute;
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);
+transition: 0.6s;
+}
+
+.btn:hover::after {
+left: 100%;
 }
 
 .hero {
@@ -95,6 +111,7 @@ margin-top: 30px;
 
 .flip-card {
 perspective: 1000px;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .flip-inner {
@@ -110,6 +127,11 @@ cursor: pointer;
 transform: rotateY(180deg);
 }
 
+.flip-card:hover {
+transform: translateY(-8px);
+box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
 .flip-front, .flip-back {
 position: absolute;
 width: 100%;
@@ -119,8 +141,6 @@ border-radius: 16px;
 overflow: hidden;
 box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
-
-/* 🔥 MEJORA DE IMÁGENES */
 
 .flip-front img {
 width: 100%;
@@ -143,11 +163,29 @@ padding: 20px;
 transform: rotateY(180deg);
 }
 
-/* contador ultra pro */
+/* contador */
 
 .contador {
 background: linear-gradient(135deg,#1f1f1f,#2e2e2e);
 color: white;
+position: relative;
+overflow: hidden;
+}
+
+.contador::before {
+content: "";
+position: absolute;
+top: -50%;
+left: -50%;
+width: 200%;
+height: 200%;
+background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%);
+animation: glowMove 12s linear infinite;
+}
+
+@keyframes glowMove {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
 }
 
 .counter-grid {
@@ -163,12 +201,25 @@ padding: 25px;
 border-radius: 18px;
 backdrop-filter: blur(12px);
 box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+transition: 0.3s;
+border: 1px solid rgba(255,255,255,0.15);
 }
+
+.counter-item:hover {
+transform: scale(1.05);
+background: rgba(255,255,255,0.15);
+}
+
+/* números brillantes */
 
 .counter-item span {
 font-size: 36px;
 font-weight: 600;
 display: block;
+background: linear-gradient(135deg,#ffd6e6,#ffffff);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
 }
 
 .counter-item p {
@@ -179,6 +230,16 @@ margin-top: 6px;
 
 .footer {
 height: 40px;
+}
+
+/* títulos elegantes */
+
+h1, h2 {
+letter-spacing: 1px;
+background: linear-gradient(135deg,#e896b3,#ffb6d2);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
 }
 
 /* animaciones */
@@ -192,9 +253,10 @@ transition: 1s;
 .fade.show {
 opacity: 1;
 transform: translateY(0);
+transition: 1.2s ease;
 }
 
-/* ===== MENU HAMBURGUESA MOVIL ===== */
+/* menú móvil */
 
 .menu-toggle {
 font-size: 28px;
@@ -232,9 +294,6 @@ margin: 20px;
 }
 
 }
-/* ===== EFECTOS EXTRA BONITOS ===== */
-
-/* sombras suaves a todas las secciones */
 
 .section,
 .hero {
@@ -243,97 +302,6 @@ margin: 30px 10px;
 box-shadow: 0 10px 40px rgba(0,0,0,0.08);
 }
 
-/* títulos más elegantes */
-
-h1, h2 {
-letter-spacing: 1px;
-background: linear-gradient(135deg,#e896b3,#ffb6d2);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-}
-
-/* efecto hover en tarjetas */
-
-.flip-card {
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.flip-card:hover {
-transform: translateY(-8px);
-box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-}
-
-/* ===== MEJORAS DEL CONTADOR ===== */
-
-.contador {
-position: relative;
-overflow: hidden;
-}
-
-.contador::before {
-content: "";
-position: absolute;
-top: -50%;
-left: -50%;
-width: 200%;
-height: 200%;
-background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%);
-animation: glowMove 12s linear infinite;
-}
-
-@keyframes glowMove {
-0% { transform: rotate(0deg); }
-100% { transform: rotate(360deg); }
-}
-
-.counter-item {
-transition: 0.3s;
-border: 1px solid rgba(255,255,255,0.15);
-}
-
-.counter-item:hover {
-transform: scale(1.05);
-background: rgba(255,255,255,0.15);
-}
-
-/* números brillantes */
-
-.counter-item span {
-background: linear-gradient(135deg,#ffd6e6,#ffffff);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-}
-
-/* botón con brillo */
-
-.btn {
-position: relative;
-overflow: hidden;
-}
-
-.btn::after {
-content: "";
-position: absolute;
-top: 0;
-left: -100%;
-width: 100%;
-height: 100%;
-background: linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);
-transition: 0.6s;
-}
-
-.btn:hover::after {
-left: 100%;
-}
-
-/* scroll más suave */
-
 html {
 scroll-behavior: smooth;
-}
-
-/* animación entrada más suave */
-
-.fade.show {
-transition: 1.2s ease;
 }
